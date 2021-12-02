@@ -5,9 +5,6 @@ import matplotlib.pyplot as plt
 from sklearn import svm
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 gtd = pd.read_csv("GTD_new.csv",encoding = "ISO-8859-1")
-out_df = pd.read_csv("out.csv",encoding = "ISO-8859-1")
-print(out_df.head())
-break
 gtd['key'] = 0
 NorthAmerica = gtd.loc[gtd['region'] == 1]
 CentralAmerica = gtd.loc[gtd['region'] == 2 ]
@@ -31,18 +28,18 @@ def mergeDataframes(df1,df2):
   df_cartesian = df1.merge(df2, how='outer',on = 'key')
   return df_cartesian
 
-NorthAmerica = getRows(NorthAmerica,200)
-CentralAmerica = getRows(CentralAmerica,200)
-SouthAmerica = getRows(SouthAmerica,200)
-EastAsia = getRows(EastAsia,200)
-SouthEastAsia = getRows(SouthEastAsia,200)
-SouthAsia = getRows(SouthAsia,200)
-CentralAsia = getRows(CentralAsia,200)
-WesternEurope = getRows(WesternEurope,200)
-EasternEurope = getRows(EasternEurope,200)
-MiddleEastNorthAfrica = getRows(MiddleEastNorthAfrica,200)
-SubSaharanAfrica = getRows(SubSaharanAfrica,200)
-AustralasiaOceania = getRows(AustralasiaOceania,200)
+# NorthAmerica = getRows(NorthAmerica,200)
+# CentralAmerica = getRows(CentralAmerica,200)
+# SouthAmerica = getRows(SouthAmerica,200)
+# EastAsia = getRows(EastAsia,200)
+# SouthEastAsia = getRows(SouthEastAsia,200)
+# SouthAsia = getRows(SouthAsia,200)
+# CentralAsia = getRows(CentralAsia,200)
+# WesternEurope = getRows(WesternEurope,200)
+# EasternEurope = getRows(EasternEurope,200)
+# MiddleEastNorthAfrica = getRows(MiddleEastNorthAfrica,200)
+# SubSaharanAfrica = getRows(SubSaharanAfrica,200)
+# AustralasiaOceania = getRows(AustralasiaOceania,200)
 
 ## North-America Combinations
 NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
@@ -175,4 +172,5 @@ print(mergedDF.columns)
 mergedDF.loc[mergedDF['gname_x'] == mergedDF['gname_y'], 'label'] = 1
 print(len(mergedDF[mergedDF.label == 1]))
 print(len(mergedDF[mergedDF.label == 0]))
-mergedDF.to_csv('out.csv', index=False)
+mergedDF.to_csv('out_final.csv', index=False)
+print("done")
