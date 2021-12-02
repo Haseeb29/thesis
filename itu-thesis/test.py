@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 from sklearn import svm
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 gtd = pd.read_csv("GTD_new.csv",encoding = "ISO-8859-1")
+out_df = pd.read_csv("out.csv",encoding = "ISO-8859-1")
+print(out_df.head())
+break
 gtd['key'] = 0
 NorthAmerica = gtd.loc[gtd['region'] == 1]
 CentralAmerica = gtd.loc[gtd['region'] == 2 ]
