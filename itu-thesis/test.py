@@ -41,39 +41,39 @@ def mergeDataframes(df1,df2):
 # SubSaharanAfrica = getRows(SubSaharanAfrica,200)
 # AustralasiaOceania = getRows(AustralasiaOceania,200)
 
-## North-America Combinations
-NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
-NA_SA = mergeDataframes(NorthAmerica,SouthAmerica)
-NA_EAs = mergeDataframes(NorthAmerica,EastAsia)
-NA_SEAs = mergeDataframes(NorthAmerica,SouthEastAsia)
-NA_SAs = mergeDataframes(NorthAmerica,SouthAsia)
-NA_CAs = mergeDataframes(NorthAmerica,CentralAsia)
-NA_WEu = mergeDataframes(NorthAmerica,WesternEurope)
-NA_EEu = mergeDataframes(NorthAmerica,EasternEurope)
-NA_MENAf = mergeDataframes(NorthAmerica,MiddleEastNorthAfrica)
-NA_SSAf = mergeDataframes(NorthAmerica,SubSaharanAfrica)
-NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
+# ## North-America Combinations
+# NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
+# NA_SA = mergeDataframes(NorthAmerica,SouthAmerica)
+# NA_EAs = mergeDataframes(NorthAmerica,EastAsia)
+# NA_SEAs = mergeDataframes(NorthAmerica,SouthEastAsia)
+# NA_SAs = mergeDataframes(NorthAmerica,SouthAsia)
+# NA_CAs = mergeDataframes(NorthAmerica,CentralAsia)
+# NA_WEu = mergeDataframes(NorthAmerica,WesternEurope)
+# NA_EEu = mergeDataframes(NorthAmerica,EasternEurope)
+# NA_MENAf = mergeDataframes(NorthAmerica,MiddleEastNorthAfrica)
+# NA_SSAf = mergeDataframes(NorthAmerica,SubSaharanAfrica)
+# NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
 
-mergedDF = NA_CA
-arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
-    
-# print('Central America Combination')
-# CA_SA = mergeDataframes(CentralAmerica,SouthAmerica)
-# CA_EAs = mergeDataframes(CentralAmerica,EastAsia)
-# CA_SEAs = mergeDataframes(CentralAmerica,SouthEastAsia)
-# CA_SAs = mergeDataframes(CentralAmerica,SouthAsia)
-# CA_WEu = mergeDataframes(CentralAmerica,WesternEurope)
-# CA_EEu = mergeDataframes(CentralAmerica,EasternEurope)
-# CA_MENAf = mergeDataframes(CentralAmerica,MiddleEastNorthAfrica)
-# CA_SSAf = mergeDataframes(CentralAmerica,SubSaharanAfrica)
-# CA_AO = mergeDataframes(CentralAmerica,AustralasiaOceania)
-# arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
+# mergedDF = NA_CA
+# arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
 # for x in arr:
 #     mergedDF = mergedDF.append(x)
 #     print(x.shape)
+    
+print('Central America Combination')
+CA_SA = mergeDataframes(CentralAmerica,SouthAmerica)
+CA_EAs = mergeDataframes(CentralAmerica,EastAsia)
+CA_SEAs = mergeDataframes(CentralAmerica,SouthEastAsia)
+CA_SAs = mergeDataframes(CentralAmerica,SouthAsia)
+CA_WEu = mergeDataframes(CentralAmerica,WesternEurope)
+CA_EEu = mergeDataframes(CentralAmerica,EasternEurope)
+CA_MENAf = mergeDataframes(CentralAmerica,MiddleEastNorthAfrica)
+CA_SSAf = mergeDataframes(CentralAmerica,SubSaharanAfrica)
+CA_AO = mergeDataframes(CentralAmerica,AustralasiaOceania)
+arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
+for x in arr:
+    mergedDF = mergedDF.append(x)
+    print(x.shape)
     
 print('South America')
 
