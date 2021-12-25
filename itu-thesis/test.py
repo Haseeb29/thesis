@@ -75,6 +75,7 @@ del NA_SSAf
 NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
 mergedDF.append(NA_AO)
 del NA_AO
+print(mergedDF.shape)
 exit()
 # mergedDF = NA_CA
 # arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
