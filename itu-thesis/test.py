@@ -42,18 +42,40 @@ def mergeDataframes(df1,df2):
 # AustralasiaOceania = getRows(AustralasiaOceania,200)
 
 # ## North-America Combinations
-# NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
-# NA_SA = mergeDataframes(NorthAmerica,SouthAmerica)
-# NA_EAs = mergeDataframes(NorthAmerica,EastAsia)
-# NA_SEAs = mergeDataframes(NorthAmerica,SouthEastAsia)
-# NA_SAs = mergeDataframes(NorthAmerica,SouthAsia)
-# NA_CAs = mergeDataframes(NorthAmerica,CentralAsia)
-# NA_WEu = mergeDataframes(NorthAmerica,WesternEurope)
-# NA_EEu = mergeDataframes(NorthAmerica,EasternEurope)
-# NA_MENAf = mergeDataframes(NorthAmerica,MiddleEastNorthAfrica)
-# NA_SSAf = mergeDataframes(NorthAmerica,SubSaharanAfrica)
-# NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
-
+NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
+mergedDF = NA_CA
+del NA_CA
+NA_SA = mergeDataframes(NorthAmerica,SouthAmerica)
+mergedDF.append(NA_SA)
+del NA_SA
+NA_EAs = mergeDataframes(NorthAmerica,EastAsia)
+mergedDF.append(NA_EAs)
+del NA_EAs
+NA_SEAs = mergeDataframes(NorthAmerica,SouthEastAsia)
+mergedDF.append(NA_SEAs)
+del NA_SEAs
+NA_SAs = mergeDataframes(NorthAmerica,SouthAsia)
+mergedDF.append(NA_SAs)
+del NA_SAs
+NA_CAs = mergeDataframes(NorthAmerica,CentralAsia)
+mergedDF.append(NA_CAs)
+del NA_CAs
+NA_WEu = mergeDataframes(NorthAmerica,WesternEurope)
+mergedDF.append(NA_WEu)
+del NA_WEu
+NA_EEu = mergeDataframes(NorthAmerica,EasternEurope)
+mergedDF.append(NA_EEu)
+del NA_EEu
+NA_MENAf = mergeDataframes(NorthAmerica,MiddleEastNorthAfrica)
+mergedDF.append(NA_MENAf)
+del NA_MENAf
+NA_SSAf = mergeDataframes(NorthAmerica,SubSaharanAfrica)
+mergedDF.append(NA_SSAf)
+del NA_SSAf
+NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
+mergedDF.append(NA_AO)
+del NA_AO
+exit()
 # mergedDF = NA_CA
 # arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
 # for x in arr:
