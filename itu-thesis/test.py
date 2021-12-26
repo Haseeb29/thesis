@@ -55,7 +55,7 @@ MiddleEastNorthAfrica = getRows(MiddleEastNorthAfrica,2000)
 SubSaharanAfrica = getRows(SubSaharanAfrica,2000)
 AustralasiaOceania = getRows(AustralasiaOceania,2000)
 
-## North-America Combinations
+# North-America Combinations
 NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
 mergedDF = NA_CA
 del NA_CA
@@ -89,12 +89,12 @@ del NA_SSAf
 NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
 mergedDF.append(NA_AO)
 del NA_AO
-# # mergedDF = NA_CA
-# # arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
-# # for x in arr:
-# #     mergedDF = mergedDF.append(x)
-# #     print(x.shape)
-#
+# # # mergedDF = NA_CA
+# # # arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
+# # # for x in arr:
+# # #     mergedDF = mergedDF.append(x)
+# # #     print(x.shape)
+# #
 print('Central America Combination')
 CA_SA = mergeDataframes(CentralAmerica,SouthAmerica)
 mergedDF.append(CA_SA)
@@ -124,15 +124,15 @@ del CA_SSAf
 CA_AO = mergeDataframes(CentralAmerica,AustralasiaOceania)
 mergedDF.append(CA_AO)
 del CA_AO
-# mergedDF.to_csv('out_12.csv', index=False)
-#
-# exit()
-
-# arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
-# for x in arr:
-#     mergedDF = mergedDF.append(x)
-#     print(x.shape)
-
+# # mergedDF.to_csv('out_12.csv', index=False)
+# #
+# # exit()
+# 
+# # arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
+# # for x in arr:
+# #     mergedDF = mergedDF.append(x)
+# #     print(x.shape)
+# 
 print('South America')
 
 SA_EAs = mergeDataframes(SouthAmerica,EastAsia)
@@ -162,11 +162,11 @@ del SA_SSAf
 SA_AO = mergeDataframes(SouthAmerica,AustralasiaOceania)
 mergedDF.append(SA_AO)
 del SA_AO
-
-# arr = [SA_EAs,SA_SEAs,SA_SAs,SA_WEu,SA_EEu,SA_MENAf,SA_SSAf,SA_AO,SA_CAs]
-# for x in arr:
-#     mergedDF = mergedDF.append(x)
-#     print(x.shape)
+# 
+# # arr = [SA_EAs,SA_SEAs,SA_SAs,SA_WEu,SA_EEu,SA_MENAf,SA_SSAf,SA_AO,SA_CAs]
+# # for x in arr:
+# #     mergedDF = mergedDF.append(x)
+# #     print(x.shape)
 print('East Asia')
 EAs_SEAs = mergeDataframes(EastAsia,SouthEastAsia)
 mergedDF.append(EAs_SEAs)
@@ -192,76 +192,132 @@ del EAs_SSAf
 EAs_AO = mergeDataframes(EastAsia,AustralasiaOceania)
 mergedDF.append(EAs_AO)
 del EAs_AO
-mergedDF.to_csv('out_1234.csv', index=False)
+# mergedDF.to_csv('out_1234.csv', index=False)
 
-exit()
+# exit()
 # arr = [EAs_SEAs,EAs_SAs,EAs_CAs,EAs_WEu,EAs_EEu,EAs_MENAf,EAs_SSAf,EAs_AO]
 # for x in arr:
 #     mergedDF = mergedDF.append(x)
 #     print(x.shape)
 print('South East Asia')
 SEAs_SAs = mergeDataframes(SouthEastAsia,SouthAsia)
+mergedDF.append(SEAs_SAs)
+del SEAs_SAs
 SEAs_CAs = mergeDataframes(SouthEastAsia,CentralAsia)
+mergedDF.append(SEAs_CAs)
+del SEAs_CAs
 SEAs_WEu = mergeDataframes(SouthEastAsia,WesternEurope)
+mergedDF.append(SEAs_WEu)
+del SEAs_WEu
 SEAs_EEu = mergeDataframes(SouthEastAsia,EasternEurope)
+mergedDF.append(SEAs_EEu)
+del SEAs_EEu
 SEAs_MENAf = mergeDataframes(SouthEastAsia,MiddleEastNorthAfrica)
+mergedDF.append(SEAs_MENAf)
+del SEAs_MENAf
 SEAs_SSAf = mergeDataframes(SouthEastAsia,SubSaharanAfrica)
+mergedDF.append(SEAs_SSAf)
+del SEAs_SSAf
 SEAs_AO = mergeDataframes(SouthEastAsia,AustralasiaOceania)
-arr = [SEAs_SAs,SEAs_CAs,SEAs_WEu,SEAs_EEu,SEAs_MENAf,SEAs_SSAf,SEAs_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(SEAs_AO)
+del SEAs_AO
+# arr = [SEAs_SAs,SEAs_CAs,SEAs_WEu,SEAs_EEu,SEAs_MENAf,SEAs_SSAf,SEAs_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
 print('South Asia')
 SAs_CAs = mergeDataframes(SouthAsia,CentralAsia)
+mergedDF.append(SAs_CAs)
+del SAs_CAs
 SAs_WEu = mergeDataframes(SouthAsia,WesternEurope)
+mergedDF.append(SAs_WEu)
+del SAs_WEu
 SAs_EEu = mergeDataframes(SouthAsia,EasternEurope)
+mergedDF.append(SAs_EEu)
+del SAs_EEu
 SAs_MENAf = mergeDataframes(SouthAsia,MiddleEastNorthAfrica)
+mergedDF.append(SAs_MENAf)
+del SAs_MENAf
 SAs_SSAf = mergeDataframes(SouthAsia,SubSaharanAfrica)
+mergedDF.append(SAs_SSAf)
+del SAs_SSAf
 SAs_AO = mergeDataframes(SouthAsia,AustralasiaOceania)
-arr = [SAs_CAs,SAs_WEu,SAs_EEu,SAs_MENAf,SAs_SSAf,SAs_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(SAs_AO)
+del SAs_AO
+# arr = [SAs_CAs,SAs_WEu,SAs_EEu,SAs_MENAf,SAs_SSAf,SAs_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
 print('Central Asia')
 CAs_WEu = mergeDataframes(CentralAsia,WesternEurope)
+mergedDF.append(CAs_WEu)
+del CAs_WEu
 CAs_EEu = mergeDataframes(CentralAsia,EasternEurope)
+mergedDF.append(CAs_EEu)
+del CAs_EEu
 CAs_MENAf = mergeDataframes(CentralAsia,MiddleEastNorthAfrica)
+mergedDF.append(CAs_MENAf)
+del CAs_MENAf
 CAs_SSAf = mergeDataframes(CentralAsia,SubSaharanAfrica)
+mergedDF.append(CAs_SSAf)
+del CAs_SSAf
 CAs_AO = mergeDataframes(CentralAsia,AustralasiaOceania)
-arr = [CAs_WEu,CAs_EEu,CAs_MENAf,CAs_SSAf,CAs_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(CAs_AO)
+del CAs_AO
+# arr = [CAs_WEu,CAs_EEu,CAs_MENAf,CAs_SSAf,CAs_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
 print('Western Europe')
 WEu_EEu = mergeDataframes(WesternEurope,EasternEurope)
+mergedDF.append(WEu_EEu)
+del WEu_EEu
 WEu_MENAf = mergeDataframes(WesternEurope,MiddleEastNorthAfrica)
+mergedDF.append(WEu_MENAf)
+del WEu_MENAf
 WEu_SSAf = mergeDataframes(WesternEurope,SubSaharanAfrica)
+mergedDF.append(WEu_SSAf)
+del WEu_SSAf
 WEu_AO = mergeDataframes(WesternEurope,AustralasiaOceania)
-arr = [WEu_EEu,WEu_MENAf,WEu_SSAf,WEu_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(WEu_AO)
+del WEu_AO
+# arr = [WEu_EEu,WEu_MENAf,WEu_SSAf,WEu_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
 print('Eastern Europe')
 EEu_MENAf = mergeDataframes(EasternEurope,MiddleEastNorthAfrica)
+mergedDF.append(EEu_MENAf)
+del EEu_MENAf
 EEu_SSAf = mergeDataframes(EasternEurope,SubSaharanAfrica)
+mergedDF.append(EEu_SSAf)
+del EEu_SSAf
 EEu_AO = mergeDataframes(EasternEurope,AustralasiaOceania)
-arr = [EEu_MENAf,EEu_SSAf,EEu_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(EEu_AO)
+del EEu_AO
+# arr = [EEu_MENAf,EEu_SSAf,EEu_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
 print('MiddleEast North Africa')
 MENAf_SSAf = mergeDataframes(MiddleEastNorthAfrica,SubSaharanAfrica)
+mergedDF.append(MENAf_SSAf)
+del MENAf_SSAf
 MENAf_AO = mergeDataframes(MiddleEastNorthAfrica,AustralasiaOceania)
-arr = [MENAf_SSAf,MENAf_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(MENAf_AO)
+del MENAf_AO
+# arr = [MENAf_SSAf,MENAf_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
 print('Sub Saharan Africa')
 SSAf_AO = mergeDataframes(SubSaharanAfrica,AustralasiaOceania)
-arr = [SSAf_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(SSAf_AO)
+del SSAf_AO
+# arr = [SSAf_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
 
 mergedDF['label'] = 0
 print(mergedDF.columns)
