@@ -42,18 +42,18 @@ def mergeDataframes(df1,df2):
   df_cartesian = df1.merge(df2, how='outer',on = 'key')
   return df_cartesian
 
-NorthAmerica = getRows(NorthAmerica,2000)
-CentralAmerica = getRows(CentralAmerica,2000)
-SouthAmerica = getRows(SouthAmerica,2000)
-EastAsia = getRows(EastAsia,2000)
-SouthEastAsia = getRows(SouthEastAsia,2000)
-SouthAsia = getRows(SouthAsia,2000)
-CentralAsia = getRows(CentralAsia,2000)
-WesternEurope = getRows(WesternEurope,2000)
-EasternEurope = getRows(EasternEurope,2000)
-MiddleEastNorthAfrica = getRows(MiddleEastNorthAfrica,2000)
-SubSaharanAfrica = getRows(SubSaharanAfrica,2000)
-AustralasiaOceania = getRows(AustralasiaOceania,2000)
+NorthAmerica = getRows(NorthAmerica,3000)
+CentralAmerica = getRows(CentralAmerica,3000)
+SouthAmerica = getRows(SouthAmerica,3000)
+EastAsia = getRows(EastAsia,3000)
+SouthEastAsia = getRows(SouthEastAsia,3000)
+SouthAsia = getRows(SouthAsia,3000)
+CentralAsia = getRows(CentralAsia,3000)
+WesternEurope = getRows(WesternEurope,3000)
+EasternEurope = getRows(EasternEurope,3000)
+MiddleEastNorthAfrica = getRows(MiddleEastNorthAfrica,3000)
+SubSaharanAfrica = getRows(SubSaharanAfrica,3000)
+AustralasiaOceania = getRows(AustralasiaOceania,3000)
 
 # North-America Combinations
 NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
@@ -127,12 +127,12 @@ del CA_AO
 # # mergedDF.to_csv('out_12.csv', index=False)
 # #
 # # exit()
-# 
+#
 # # arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
 # # for x in arr:
 # #     mergedDF = mergedDF.append(x)
 # #     print(x.shape)
-# 
+#
 print('South America')
 
 SA_EAs = mergeDataframes(SouthAmerica,EastAsia)
@@ -162,7 +162,7 @@ del SA_SSAf
 SA_AO = mergeDataframes(SouthAmerica,AustralasiaOceania)
 mergedDF.append(SA_AO)
 del SA_AO
-# 
+#
 # # arr = [SA_EAs,SA_SEAs,SA_SAs,SA_WEu,SA_EEu,SA_MENAf,SA_SSAf,SA_AO,SA_CAs]
 # # for x in arr:
 # #     mergedDF = mergedDF.append(x)
@@ -324,5 +324,5 @@ print(mergedDF.columns)
 mergedDF.loc[mergedDF['gname_x'] == mergedDF['gname_y'], 'label'] = 1
 print(len(mergedDF[mergedDF.label == 1]))
 print(len(mergedDF[mergedDF.label == 0]))
-mergedDF.to_csv('out_final.csv', index=False)
+mergedDF.to_csv('out_final3000.csv', index=False)
 print("done")
