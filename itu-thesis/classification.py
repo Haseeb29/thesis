@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import LogisticRegression
-gtd = pd.read_csv("GTD_new.csv",encoding = "ISO-8859-1")
+gtd = pd.read_csv("out_final3000.csv",encoding = "ISO-8859-1")
 mergedDF = gtd.drop(columns='key')
 mergedDF_x = mergedDF.drop(columns='label')
 mergedDF_x = mergedDF_x.values
