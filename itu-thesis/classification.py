@@ -3,7 +3,7 @@ import numpy as np
 import pickle, gzip
 import matplotlib.pyplot as plt
 from sklearn import svm
-from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
+from sklearn.metrics import confusion_matrix, precision_recall_fscore_support, accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -26,4 +26,5 @@ print(x_test.shape)
 print(y_test.shape)
 model1.fit(x_train, y_train)
 pred1 = model1.predict(x_test)
-acc1 = np.mean(pred1==np.argmax(y_test, axis=1))*100
+acc1 = accuracy_score(y_test,pred1)*100
+print(acc1)
