@@ -75,8 +75,6 @@ del NA_SSAf
 NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
 mergedDF.append(NA_AO)
 del NA_AO
-print(mergedDF.shape)
-exit()
 # mergedDF = NA_CA
 # arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
 # for x in arr:
@@ -85,18 +83,39 @@ exit()
     
 print('Central America Combination')
 CA_SA = mergeDataframes(CentralAmerica,SouthAmerica)
+mergedDF.append(CA_SA)
+del CA_SA
 CA_EAs = mergeDataframes(CentralAmerica,EastAsia)
+mergedDF.append(CA_EAs)
+del CA_EAs
 CA_SEAs = mergeDataframes(CentralAmerica,SouthEastAsia)
+mergedDF.append(CA_SEAs)
+del CA_SEAs
 CA_SAs = mergeDataframes(CentralAmerica,SouthAsia)
+mergedDF.append(CA_SAs)
+del CA_SAs
+print('half')
 CA_WEu = mergeDataframes(CentralAmerica,WesternEurope)
+mergedDF.append(CA_WEu)
+del CA_WEu
 CA_EEu = mergeDataframes(CentralAmerica,EasternEurope)
+mergedDF.append(CA_EEu)
+del CA_EEu
 CA_MENAf = mergeDataframes(CentralAmerica,MiddleEastNorthAfrica)
+mergedDF.append(CA_MENAf)
+del CA_MENAf
 CA_SSAf = mergeDataframes(CentralAmerica,SubSaharanAfrica)
+mergedDF.append(CA_SSAf)
+del CA_SSAf
 CA_AO = mergeDataframes(CentralAmerica,AustralasiaOceania)
-arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
-for x in arr:
-    mergedDF = mergedDF.append(x)
-    print(x.shape)
+mergedDF.append(CA_AO)
+del CA_AO
+exit()
+
+# arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
+# for x in arr:
+#     mergedDF = mergedDF.append(x)
+#     print(x.shape)
     
 print('South America')
 
