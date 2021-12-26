@@ -110,6 +110,8 @@ del CA_SSAf
 CA_AO = mergeDataframes(CentralAmerica,AustralasiaOceania)
 mergedDF.append(CA_AO)
 del CA_AO
+mergedDF.to_csv('out_12.csv', index=False)
+
 exit()
 
 # arr = [CA_SA,CA_EAs,CA_SEAs,CA_SAs,CA_WEu,CA_EEu,CA_MENAf,CA_SSAf,CA_AO]
