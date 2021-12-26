@@ -324,5 +324,5 @@ print(mergedDF.columns)
 mergedDF.loc[mergedDF['gname_x'] == mergedDF['gname_y'], 'label'] = 1
 print(len(mergedDF[mergedDF.label == 1]))
 print(len(mergedDF[mergedDF.label == 0]))
-mergedDF.to_csv('out_final3000.csv', index=False)
+mergedDF.to_csv('out_final50.csv', index=False)
 print("done")
