@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import LogisticRegression
-gtd = pd.read_csv("out_final3000.csv",encoding = "ISO-8859-1")
+gtd = pd.read_csv("out_final50.csv",encoding = "ISO-8859-1")
 mergedDF = gtd.drop(columns='key')
 mergedDF_x = mergedDF.drop(columns='label')
 mergedDF_x = mergedDF_x.values
@@ -20,6 +20,10 @@ y = mergedDF['label'].values
 x_train, x_test, y_train, y_test = train_test_split(x_scaled, y, test_size=0.2, random_state=0)
 model1 = svm.SVC(C=5, kernel='rbf')
 print("fitting")
+print(x_train)
+print(y_train)
+print(x_test)
+print(y_test)
 model1.fit(x_train, y_train)
 pred1 = model1.predict(x_test)
 acc1 = np.mean(pred1==np.argmax(y_test, axis=1))*100
