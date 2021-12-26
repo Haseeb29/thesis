@@ -5,7 +5,7 @@ import pickle, gzip
 # from sklearn import svm
 # from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 gtd = pd.read_csv("GTD_new.csv",encoding = "ISO-8859-1")
-mergedDF = pd.read_csv("out_12.csv",encoding = "ISO-8859-1")
+# mergedDF = pd.read_csv("out_12.csv",encoding = "ISO-8859-1")
 gtd['key'] = 0
 NorthAmerica = gtd.loc[gtd['region'] == 1]
 CentralAmerica = gtd.loc[gtd['region'] == 2 ]
@@ -27,9 +27,14 @@ AustralasiaOceania = gtd.loc[gtd['region'] == 12 ]
 # print(EastAsia.shape)
 # print(SouthEastAsia.shape)
 # print(SouthAsia.shape)
-# exit()
+# print(CentralAsia.shape)
+# print(WesternEurope.shape)
+# print(EasternEurope.shape)
+# print(MiddleEastNorthAfrica.shape)
+# print(SubSaharanAfrica.shape)
+# print(AustralasiaOceania.shape)
 def getRows(df,num):
-  if len(df.index)>200:
+  if len(df.index)>num:
     df = df.sample(n=num,replace=False)
   return df
 
@@ -37,88 +42,88 @@ def mergeDataframes(df1,df2):
   df_cartesian = df1.merge(df2, how='outer',on = 'key')
   return df_cartesian
 
-# NorthAmerica = getRows(NorthAmerica,200)
-# CentralAmerica = getRows(CentralAmerica,200)
-# SouthAmerica = getRows(SouthAmerica,200)
-# EastAsia = getRows(EastAsia,200)
-SouthEastAsia = getRows(SouthEastAsia,7000)
-# SouthAsia = getRows(SouthAsia,200)
-# CentralAsia = getRows(CentralAsia,200)
-# WesternEurope = getRows(WesternEurope,200)
-# EasternEurope = getRows(EasternEurope,200)
-# MiddleEastNorthAfrica = getRows(MiddleEastNorthAfrica,200)
-# SubSaharanAfrica = getRows(SubSaharanAfrica,200)
-# AustralasiaOceania = getRows(AustralasiaOceania,200)
+NorthAmerica = getRows(NorthAmerica,1500)
+CentralAmerica = getRows(CentralAmerica,1500)
+SouthAmerica = getRows(SouthAmerica,1500)
+EastAsia = getRows(EastAsia,1500)
+SouthEastAsia = getRows(SouthEastAsia,1500)
+SouthAsia = getRows(SouthAsia,1500)
+CentralAsia = getRows(CentralAsia,1500)
+WesternEurope = getRows(WesternEurope,1500)
+EasternEurope = getRows(EasternEurope,1500)
+MiddleEastNorthAfrica = getRows(MiddleEastNorthAfrica,1500)
+SubSaharanAfrica = getRows(SubSaharanAfrica,1500)
+AustralasiaOceania = getRows(AustralasiaOceania,1500)
 
-# ## North-America Combinations
-# NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
-# mergedDF = NA_CA
-# del NA_CA
-# NA_SA = mergeDataframes(NorthAmerica,SouthAmerica)
-# mergedDF.append(NA_SA)
-# del NA_SA
-# NA_EAs = mergeDataframes(NorthAmerica,EastAsia)
-# mergedDF.append(NA_EAs)
-# del NA_EAs
-# NA_SEAs = mergeDataframes(NorthAmerica,SouthEastAsia)
-# mergedDF.append(NA_SEAs)
-# del NA_SEAs
-# NA_SAs = mergeDataframes(NorthAmerica,SouthAsia)
-# mergedDF.append(NA_SAs)
-# del NA_SAs
-# NA_CAs = mergeDataframes(NorthAmerica,CentralAsia)
-# mergedDF.append(NA_CAs)
-# del NA_CAs
-# NA_WEu = mergeDataframes(NorthAmerica,WesternEurope)
-# mergedDF.append(NA_WEu)
-# del NA_WEu
-# NA_EEu = mergeDataframes(NorthAmerica,EasternEurope)
-# mergedDF.append(NA_EEu)
-# del NA_EEu
-# NA_MENAf = mergeDataframes(NorthAmerica,MiddleEastNorthAfrica)
-# mergedDF.append(NA_MENAf)
-# del NA_MENAf
-# NA_SSAf = mergeDataframes(NorthAmerica,SubSaharanAfrica)
-# mergedDF.append(NA_SSAf)
-# del NA_SSAf
-# NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
-# mergedDF.append(NA_AO)
-# del NA_AO
+## North-America Combinations
+NA_CA = mergeDataframes(NorthAmerica,CentralAmerica)
+mergedDF = NA_CA
+del NA_CA
+NA_SA = mergeDataframes(NorthAmerica,SouthAmerica)
+mergedDF.append(NA_SA)
+del NA_SA
+NA_EAs = mergeDataframes(NorthAmerica,EastAsia)
+mergedDF.append(NA_EAs)
+del NA_EAs
+NA_SEAs = mergeDataframes(NorthAmerica,SouthEastAsia)
+mergedDF.append(NA_SEAs)
+del NA_SEAs
+NA_SAs = mergeDataframes(NorthAmerica,SouthAsia)
+mergedDF.append(NA_SAs)
+del NA_SAs
+NA_CAs = mergeDataframes(NorthAmerica,CentralAsia)
+mergedDF.append(NA_CAs)
+del NA_CAs
+NA_WEu = mergeDataframes(NorthAmerica,WesternEurope)
+mergedDF.append(NA_WEu)
+del NA_WEu
+NA_EEu = mergeDataframes(NorthAmerica,EasternEurope)
+mergedDF.append(NA_EEu)
+del NA_EEu
+NA_MENAf = mergeDataframes(NorthAmerica,MiddleEastNorthAfrica)
+mergedDF.append(NA_MENAf)
+del NA_MENAf
+NA_SSAf = mergeDataframes(NorthAmerica,SubSaharanAfrica)
+mergedDF.append(NA_SSAf)
+del NA_SSAf
+NA_AO = mergeDataframes(NorthAmerica,AustralasiaOceania)
+mergedDF.append(NA_AO)
+del NA_AO
 # # mergedDF = NA_CA
 # # arr = [NA_SA,NA_EAs,NA_SEAs,NA_SAs,NA_WEu,NA_EEu,NA_MENAf,NA_SSAf,NA_AO,NA_CAs]
 # # for x in arr:
 # #     mergedDF = mergedDF.append(x)
 # #     print(x.shape)
 #
-# print('Central America Combination')
-# CA_SA = mergeDataframes(CentralAmerica,SouthAmerica)
-# mergedDF.append(CA_SA)
-# del CA_SA
-# CA_EAs = mergeDataframes(CentralAmerica,EastAsia)
-# mergedDF.append(CA_EAs)
-# del CA_EAs
-# CA_SEAs = mergeDataframes(CentralAmerica,SouthEastAsia)
-# mergedDF.append(CA_SEAs)
-# del CA_SEAs
-# CA_SAs = mergeDataframes(CentralAmerica,SouthAsia)
-# mergedDF.append(CA_SAs)
-# del CA_SAs
-# print('half')
-# CA_WEu = mergeDataframes(CentralAmerica,WesternEurope)
-# mergedDF.append(CA_WEu)
-# del CA_WEu
-# CA_EEu = mergeDataframes(CentralAmerica,EasternEurope)
-# mergedDF.append(CA_EEu)
-# del CA_EEu
-# CA_MENAf = mergeDataframes(CentralAmerica,MiddleEastNorthAfrica)
-# mergedDF.append(CA_MENAf)
-# del CA_MENAf
-# CA_SSAf = mergeDataframes(CentralAmerica,SubSaharanAfrica)
-# mergedDF.append(CA_SSAf)
-# del CA_SSAf
-# CA_AO = mergeDataframes(CentralAmerica,AustralasiaOceania)
-# mergedDF.append(CA_AO)
-# del CA_AO
+print('Central America Combination')
+CA_SA = mergeDataframes(CentralAmerica,SouthAmerica)
+mergedDF.append(CA_SA)
+del CA_SA
+CA_EAs = mergeDataframes(CentralAmerica,EastAsia)
+mergedDF.append(CA_EAs)
+del CA_EAs
+CA_SEAs = mergeDataframes(CentralAmerica,SouthEastAsia)
+mergedDF.append(CA_SEAs)
+del CA_SEAs
+CA_SAs = mergeDataframes(CentralAmerica,SouthAsia)
+mergedDF.append(CA_SAs)
+del CA_SAs
+print('half')
+CA_WEu = mergeDataframes(CentralAmerica,WesternEurope)
+mergedDF.append(CA_WEu)
+del CA_WEu
+CA_EEu = mergeDataframes(CentralAmerica,EasternEurope)
+mergedDF.append(CA_EEu)
+del CA_EEu
+CA_MENAf = mergeDataframes(CentralAmerica,MiddleEastNorthAfrica)
+mergedDF.append(CA_MENAf)
+del CA_MENAf
+CA_SSAf = mergeDataframes(CentralAmerica,SubSaharanAfrica)
+mergedDF.append(CA_SSAf)
+del CA_SSAf
+CA_AO = mergeDataframes(CentralAmerica,AustralasiaOceania)
+mergedDF.append(CA_AO)
+del CA_AO
 # mergedDF.to_csv('out_12.csv', index=False)
 #
 # exit()
