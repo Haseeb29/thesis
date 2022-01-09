@@ -3,7 +3,7 @@ import numpy as np
 import pickle, gzip
 import matplotlib.pyplot as plt
 from sklearn import svm
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import confusion_matrix, accuracy_score,f1_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -28,9 +28,9 @@ print("SVM Accuracy",acc1)
 print("SVM Precision",metrics[0])
 print("SVM Recall",metrics[1])
 print("SVM Fscore",metrics[2])
-microF1 = f1_score(y_true, y_pred, average='micro')
+microF1 = f1_score(y_test, pred1, average='micro')
 print("SVM MicroF1",microF1)
-macroF1 = f1_score(y_true, y_pred, average='macro')
+macroF1 = f1_score(-y_test, pred1, average='macro')
 print("SVM MacroF1",macroF1)
 
 model1 = svm.SVC(C=5, kernel='rbf')
@@ -43,7 +43,7 @@ print("Logistic Accuracy",acc1)
 print("Logistic Precision",metrics[0])
 print("Logistic Recall",metrics[1])
 print("Logistic Fscore",metrics[2])
-microF1 = f1_score(y_true, y_pred, average='micro')
+microF1 = f1_score(y_test, pred1, average='micro')
 print("Logistic MicroF1",microF1)
-macroF1 = f1_score(y_true, y_pred, average='macro')
+macroF1 = f1_score(y_test, pred1, average='macro')
 print("Logistic MacroF1",macroF1)
