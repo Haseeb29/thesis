@@ -3,11 +3,11 @@ import numpy as np
 import pickle, gzip
 import matplotlib.pyplot as plt
 from sklearn import svm
-from sklearn.metrics import confusion_matrix, accuracy_score,f1_score
+from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, confusion_matrix
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import LogisticRegression
 gtd = pd.read_csv("out_final50.csv",encoding = "ISO-8859-1")
@@ -30,8 +30,9 @@ print("SVM Recall",metrics[1])
 print("SVM Fscore",metrics[2])
 microF1 = f1_score(y_test, pred1, average='micro')
 print("SVM MicroF1",microF1)
-macroF1 = f1_score(-y_test, pred1, average='macro')
+macroF1 = f1_score(y_test, pred1, average='macro')
 print("SVM MacroF1",macroF1)
+print("SVM confusion matrix",confusion_matrix(y_test, pred1))
 
 model1 = svm.SVC(C=5, kernel='rbf')
 print("Logistic fitting")
@@ -47,3 +48,5 @@ microF1 = f1_score(y_test, pred1, average='micro')
 print("Logistic MicroF1",microF1)
 macroF1 = f1_score(y_test, pred1, average='macro')
 print("Logistic MacroF1",macroF1)
+print("Logistic confusion matrix",confusion_matrix(y_test, pred1))
+
