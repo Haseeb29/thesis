@@ -3,7 +3,7 @@ import numpy as np
 import pickle, gzip
 import matplotlib.pyplot as plt
 from sklearn import svm
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
